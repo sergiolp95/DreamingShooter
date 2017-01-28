@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    
+		<title>Space Shooter</title>
+        <link rel="icon" type="image/png" href="favicon.png"> <!-- Favicon chulisimo -->
+        
+        </link>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+        </noscript>
+        <style><!-- Estilo del download buton, agregado por mi por supuesto de codepen.io -->
+        @charset "UTF-8";
+@import url(http://s0.wp.com/_static/??-eJydktluAjEMRX+oIV0A0Yeq35LFJAZnUZZB/ftmAhQoVVr1aWznnujmjvkhMvSKqobMVc5ci2xRBZ8XDv2iTR74d4nQ7YhJkW4kjSngC49UDfrMiwUHzIGvHbq0d4Sr7AzlKrNKGAs2B3wbiMJhpLdhgsRklZKauVw+CEZy9IQeWIHkMq/4O0C4b/fuoESh9qx3I/lXMu1cBccuSQ0gFRK0uYuizAoHGgVQS8uXEebi+kzNpW0G77311JuvjeIGPKT+Z38u/8heRYbch3KcnouR4aaBq4jY9DxSGwiMghLzJtw0bEsCh4EmkBRMK03fvEs7gmLI5Xg1z1akGT59xy7/F6pdckNBChpuk7IIU1+EzA+oDZRhwCdJf7QJQScQugPv7u1p+bh63ayW65fdJ7Fce8Y=);
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  padding: 5%;
+  font-size: 18px;
+  background: #e8f0f5;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  /*   font-size: 21px; */
+  text-align: center;
+}
+
+div {
+  margin: 15px 0;
+}
+
+@-webkit-keyframes blink {
+  50% {
+    opacity: 1;
+  }
+  50.01% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+  50.01% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: .7;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: .7;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+.button-default, .button-primary, .button-secondary, .button-download, .button-twitter, .button-fuck-yeah {
+  display: inline-block;
+  margin: 0;
+  padding: .4em .9em;
+  border-width: 1px 1px 2px;
+  border-style: solid;
+  border-radius: 0.16667em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.15) inset;
+}
+.button-default:active, .button-primary:active, .button-secondary:active, .button-download:active, .button-twitter:active, .button-fuck-yeah:active {
+  border-width: 2px 1px 1px;
+}
+
+.button-default {
+  background: #00aadc;
+  border-color: #0091bb;
+  border-top-color: #0099c6;
+  border-bottom-color: #0088b0;
+  color: #fff;
+}
+.button-default:hover, .button-default:focus {
+  background: #33bbe3;
+  border-color: #2b9fc1;
+  border-bottom-color: #2996b6;
+  color: #fff;
+}
+.button-default:visited {
+  color: #fff;
+}
+
+.button-primary {
+  background: #00aadc;
+  border-color: #0091bb;
+  border-top-color: #0099c6;
+  border-bottom-color: #0088b0;
+  color: #fff;
+}
+.button-primary:hover, .button-primary:focus {
+  background: #33bbe3;
+  border-color: #2b9fc1;
+  border-bottom-color: #2996b6;
+  color: #fff;
+}
+.button-primary:visited {
+  color: #fff;
+}
+
+.button-secondary {
+  background: #f4f8fA;
+  border-color: #cfd3d5;
+  border-top-color: #dcdfe1;
+  border-bottom-color: #c3c6c8;
+  color: #707a88;
+}
+.button-secondary:hover, .button-secondary:focus {
+  background: white;
+  border-color: #d9d9d9;
+  border-bottom-color: #cccccc;
+  color: #707a88;
+}
+.button-secondary:visited {
+  color: #707a88;
+}
+
+.button-download {
+  background: #1dbd3d;
+  border-color: #19a134;
+  border-top-color: #1aaa37;
+  border-bottom-color: #179731;
+  color: white;
+}
+.button-download:before {
+  content: "";
+  display: inline-block;
+  margin-top: -0.25em;
+  margin-right: 0.5em;
+  font-family: 'Genericons';
+  font-size: 1.11111em;
+  line-height: 0;
+  vertical-align: middle;
+}
+.button-download:hover, .button-download:focus {
+  background: #21d846;
+  border-color: #1cb83c;
+  border-bottom-color: #1aad38;
+  color: white;
+}
+.button-download:visited {
+  color: white;
+}
+
+.button-twitter {
+  background: #55acee;
+  border-color: #4892ca;
+  border-top-color: #4d9bd6;
+  border-bottom-color: #448abe;
+  color: white;
+  position: relative;
+  width: 2.33333em;
+  height: 2.33333em;
+  border-radius: 50%;
+  text-indent: -9999px;
+  text-align: left;
+}
+.button-twitter:before {
+  content: "";
+  display: inline-block;
+  font-family: 'Genericons';
+  font-size: 1.11111em;
+  vertical-align: middle;
+  position: absolute;
+  top: 0.25em;
+  right: 0.4em;
+  text-align: right;
+  width: 100%;
+  height: 100%;
+}
+.button-twitter:hover, .button-twitter:focus {
+  background: #71baf1;
+  border-color: #609ecd;
+  border-bottom-color: #5a95c1;
+  color: white;
+}
+.button-twitter:visited {
+  color: white;
+}
+
+.button-fuck-yeah {
+  background: #ff0085;
+  border-color: #d90071;
+  border-top-color: #e60078;
+  border-bottom-color: #cc006a;
+  color: white;
+  font-size: 2em;
+  -webkit-animation: pulse .5s ease-in infinite alternate;
+          animation: pulse .5s ease-in infinite alternate;
+}
+.button-fuck-yeah:hover, .button-fuck-yeah:focus {
+  background: #ff1f94;
+  border-color: #d91a7e;
+  border-bottom-color: #cc1976;
+  color: white;
+}
+.button-fuck-yeah:visited {
+  color: white;
+}
+        </style>
+        
+	</head>
+	<body class="is-loading-0 is-loading-1 is-loading-2">
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Survival Shooter</h1>
+						<p>Página web realizada por Sergio López	&copy   Derechos de Copy Right 	&copy</p>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+                            <li class="active"><a href="https://www.facebook.com/profile.php?id=1092743896" target="_blank"><span>Facebook</span></a></li>
+                            
+						</ul>
+                            <div><a class="button-fuck-yeah" href="descarga/Build.rar">Download Game</a></div>
+					</header>
+
+				<!-- Thumbnail -->
+					<section id="thumbnails">
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen1.png" data-position="left center"><img src="images/fulls/imagen1.png" width="168" height="134"/></a>
+							<h2>Bienvenidos a Survival Shooter</h2>
+							<p>Vamos a echarle un vistazo general a las cosas que he podido incluir en mi proyecto.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen2.PNG"><img src="images/fulls/imagen2.PNG" width="168" height="134"/></a>
+							<h2>Vista principal.</h2>
+							<p>Aquí podemos apreciar la primera escena del videojuego, un jugador somnoliento con una metralleta. <font style="color:red;font-size:25px;">¡Que locura!</font></p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen3.PNG" data-position="top center"><img src="images/fulls/imagen3.PNG" width="168" height="134"/></a>
+							<h2>¡Criaturas!</h2>
+							<p>Al rato de comenzar la partida, empiezan a salir criaturas de todos los rincones, que te persiguen y quieren matarte. <font style="color:yellow;font-size:25px;">¡Mátalas para conseguir puntos y a ver si sueltan vidas!</font></p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen4.PNG"><img src="images/fulls/imagen4.PNG" width="168" height="134"/></a>
+							<h2>La Vida en persona.</h2>
+							<p>Estos pedazo de corazones, salen por las esquinas del juego. <font style="color:green;font-size:25px;">¡Cógelos y recupera tu vida!</font></p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen5.PNG" data-position="top center"><img src="images/fulls/imagen5.PNG" width="168" height="134"/></a>
+							<h2>¡Empieza la diversión!</h2>
+							<p>Al conseguir un mínimo de 30 puntos de score, este objeto se crea en el mapa. ¡Es una bola de fuego, y puedes cogerla!</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen6.PNG"><img src="images/fulls/imagen6.PNG" width="168" height="134"/></a>
+							<h2>¡Continuamos con más diversión!</h2>
+							<p>Al conseguir un mínimo de 50 puntos de score, este objeto se crea en el mapa. ¡Es una bola espectral mágica, y también puedes cogerla!</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen7.PNG"><img src="images/fulls/imagen7.PNG" width="168" height="134"/></a>
+							<h2>Para finalizar.</h2>
+							<p>Al conseguír un mínimo de 80 puntos de score, este objeto se crea en el mapa. ¡Es una bola de rayos, impresionante, también puedes cogerla!</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen8.PNG"><img src="images/fulls/imagen8.PNG" width="168" height="134"/></a>
+							<h2>Efecto chulisimo de fuego.</h2>
+							<p>Este efecto se crea en el mapa al coger la bola de fuego.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen9.PNG"><img src="images/fulls/imagen9.PNG" width="168" height="134"/></a>
+							<h2>Súper efecto de magma y explosiones.</h2>
+							<p>Este súper efecto se crea en el mapa al coger la bola espectral mágica.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen10.PNG"><img src="images/fulls/imagen10.PNG" width="168" height="134"/></a>
+							<h2>El mega efecto de rayos y huracanes.</h2>
+							<p>Este mega efecto se crea en el mapa al coger la bola de rayos.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen11.PNG"><img src="images/fulls/imagen11.PNG" width="168" height="134"/></a>
+							<h2>¡Locura!</h2>
+							<p>¿¡Qué pasará si coges todos!?</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/imagen12.PNG"><img src="images/fulls/imagen12.PNG" width="168" height="134"/></a>
+							<h2>Diviértete</h2>
+							<p>¡Héchale narices y plantalos cara! Si te atreves...</p>
+						</article>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Survival Shooter</li><li>Design: Sergio López Pérez.&copy;</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
